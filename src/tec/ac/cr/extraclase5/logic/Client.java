@@ -11,6 +11,10 @@ public class Client {
 
     private static String ip = "192.168.99.100";
 
+    /**
+     * Envia un lapicero al server para ser insertado
+     * @param json con el lapicero a insertar
+     */
     public static void insertLapicero(String json){
         try {
             URL url = new URL("http://" + ip + ":9080/app/extraclase/insert");
@@ -42,6 +46,10 @@ public class Client {
         }
     }
 
+    /**
+     * Envia el id de un lapicero a eliminar
+     * @param json con el id del lapicero a eliminar
+     */
     public static void deleteLapicero(String json){
         try {
             URL url = new URL("http://" + ip + ":9080/app/extraclase/delete");
@@ -73,6 +81,10 @@ public class Client {
         }
     }
 
+    /**
+     * Recibe todos los lapiceros de la tabla
+     * @return string con todos los lapiceros
+     */
     public static String getAllLapicero(){
         try{
             URL url = new URL("http://" + ip + ":9080/app/extraclase/select/all");
@@ -97,6 +109,11 @@ public class Client {
         }
     }
 
+    /**
+     * Retorna un lapicero especifico
+     * @param json con la id del lapicero buscado
+     * @return string con los datos del lapicero
+     */
     public static String getLapicero(String json){
         try {
             URL url = new URL("http://" + ip + ":9080/app/extraclase/select");
@@ -130,6 +147,10 @@ public class Client {
         }
     }
 
+    /**
+     * Actualiza la informacion de un lapicero en el server
+     * @param json con los datos a actualizar del lapicero
+     */
     public static void updateLapicero(String json){
         try {
             URL url = new URL("http://" + ip + ":9080/app/extraclase/update");
@@ -161,6 +182,10 @@ public class Client {
         }
     }
 
+    /**
+     * Actualiza la direccion ip de la base de datos para que el server sea capaz de conectarse
+     * @param json con la ip de la base de datos
+     */
     public static void setIp(String json){
         try {
             URL url = new URL("http://" + ip + ":9080/app/extraclase/setip");
